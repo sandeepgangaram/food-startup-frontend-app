@@ -1,0 +1,304 @@
+/* 
+---01 Typography System
+
+    -Font sizes (px)
+    /*10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+    - Font Weights
+    Default:400
+    Medium: 500
+    Semi-bold: 600
+    Bold: 700
+
+    -Line Heights
+    Default: 1
+    Small: 1.05, 
+    Paragraph: 1.6
+
+---02 Colors
+    -Primary:#e67e22
+    -Tints:#fdf2e9, 
+    -Shades:#cf711f
+    -Accents
+    -Greys: #555 , #333
+
+---05 Shadows
+
+---06 Border Radius
+Default: 9px
+
+---07 White Space (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/* Notes
+Use of Max-Width property for responsive design:
+
+if the container width
+is larger than the specified max-width,
+then the width of the element
+is equal the value that was specified for max-width.
+
+However, if the container width
+is less than the specified max width,
+then the width of the element
+will be 100% of the container element width. 
+
+rem:
+the unit rem is in relation to the root element's(html) font-size
+which is by default 16px for most browsers
+i.e., 1rem = 16px
+So we can manipulate it by changing the property in html
+html{
+  font-size:10px
+} - however this absolute value does not respect user's customize settings if any
+so we generally use 
+
+font-size = 62.5%;
+
+which comes down to the value of 10 (62.5%of16) and respects user's settings
+
+why 10? so that it is easy for us to calculate while determining values
+ex 2rem = 20px etc, 3.2rem = 32px etc.
+
+
+gneral:
+many believe inheritance via the HTML has performance benefits over direct selection via the universal selector.
+
+
+.test {
+  background-color: palegreen;
+  color: blueviolet;
+  /* width: 1000px; */
+/* max-width: 1000px; */
+/* padding: 100px; */
+/* font-size: 32px; */
+
+/* max-width: 100rem;
+  padding: 10rem;
+  font-size: 3rem; */
+/* } */
+
+/* ************************* */
+/* General reusable styles */
+/* ************************* */
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  font-weight: 600;
+  border-radius: 9px;
+
+  transition: background-color 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  /* border: 3px solid #fff; pushes the content up */
+  /* can either use the outline for outside effect */
+  /* outline: 3px solid #fff; */
+  /* or */
+  /* Insted to apply border inside use below */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* helper class */
+
+/*margin-right-small*/
+.m-r-sm {
+  margin-right: 1.6rem !important;
+}
+
+/* ************************* */
+/* Header */
+/* ************************* */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* Because we want it to be sticky later so fixed height */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+.logo {
+  height: 2.2rem;
+}
+
+/* ************************* */
+/* NAVIGATION */
+/* ************************* */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #e67e22;
+  color: #fff;
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+}
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+/* ************************* */
+/* HERO SECTION */
+/* ************************* */
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+  padding: 0 3.2rem;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: #333;
+  margin-bottom: 3.2rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+.hero-img {
+  width: 100%;
+}
+
+.delivered-meals {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 8rem;
+  align-items: center;
+}
+
+.delivered-images {
+  display: flex;
+}
+
+.delivered-images img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-images img:last-child {
+  margin: 0;
+}
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.delivered-text span {
+  color: #cf711f;
+}
+
+/* ************************* */
+/* SECTION HOW */
+/* ************************* */
+
+.section-how {
+  padding: 9.6rem 0;
+  background-color: aqua;
+}
+
+.section-how div div {
+  padding: 80px;
+  font-size: 20px;
+  background-color: antiquewhite;
+  text-align: center;
+}
