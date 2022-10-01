@@ -224,11 +224,12 @@ body {
 .m-r-sm {
   margin-right: 1.6rem !important;
 }
-
 .m-b-md {
   margin-bottom: 4.8rem !important;
 }
-
+.center-text {
+  text-align: center;
+}
 strong {
   font-weight: 500;
 }
