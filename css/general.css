@@ -25,8 +25,12 @@
     -Tints:#fdf2e9, 
     -Shades:#cf711f,#45260a;
     -Accents
-    -Greys: #555 , #333, #aaa
-            #6F6F6F (ligtest grey allowed on #fdf2e9)
+    -Greys: 
+    #888, 
+    #6F6F6F (ligtest grey allowed on #fdf2e9)
+    #555 , 
+    #333, 
+    #aaa
 
 ---05 Shadows
 
@@ -120,6 +124,9 @@ many believe inheritance via the HTML has performance benefits over direct selec
 }
 .grid--4--cols {
   grid-template-columns: repeat(4, 1fr);
+}
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
 }
 .grid--center-v {
   align-items: center;
