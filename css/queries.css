@@ -51,4 +51,7 @@ for media queries. Insted 1rem = 1em = 16px */
   .hero {
     gap: 4.8rem;
   }
+  .main-nav-list {
+    gap: 3.2rem;
+  }
 }
