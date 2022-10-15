@@ -1,16 +1,40 @@
-const yearElement = document.querySelector(".year");
+const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
-yearElement.textContent = currentYear;
+yearEl.textContent = currentYear;
 
 // Mobile Navigation
 
-const btnNavElement = document.querySelector(".btn-mobile-nav");
-const headerElement = document.querySelector(".header");
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
 const toggleNav = () => {
-  headerElement.classList.toggle("nav-open");
+  headerEl.classList.toggle("nav-open");
 };
 
-btnNavElement.addEventListener("click", toggleNav);
+btnNavEl.addEventListener("click", toggleNav);
+
+// Sticky Navigation
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    const entry = entries[0];
+
+    if (!entry.isIntersecting) {
+      document.body.classList.add("sticky");
+    }
+    if (entry.isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+
+observer.observe(sectionHeroEl);
 
 /*
 Smooth scroll  
