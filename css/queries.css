@@ -328,7 +328,7 @@ for media queries. Insted 1rem = 1em = 16px */
   margin-right: 1.6rem;
 }
 
-.no-flexbox-gap .delivered-faces {
+.no-flexbox-gap .delivered-meals {
   margin-right: 1.6rem;
 }
 
@@ -340,7 +340,7 @@ for media queries. Insted 1rem = 1em = 16px */
   margin-right: 1.6rem;
 }
 
-.no-flexbox-gap .footer-row div:not(:last-child) {
+.no-flexbox-gap .grid--footer div:not(:last-child) {
   margin-right: 6.4rem;
 }
 
