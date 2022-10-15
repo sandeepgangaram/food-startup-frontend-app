@@ -36,10 +36,11 @@ const observer = new IntersectionObserver(
 
 observer.observe(sectionHeroEl);
 
-/*
-Smooth scroll  
-- for old browsers which don't support
-smooth scroll behavior css property
+/**
+ * 
+ Smooth scroll  
+ - for old browsers which don't support
+ smooth scroll behavior css property
  */
 
 const allLinks = document.querySelectorAll("a:link");
@@ -70,3 +71,27 @@ allLinks.forEach((link) => {
     }
   });
 });
+
+/**
+ * Fixing flexbox gap property missing in
+ * old Safari versions and other browsers
+ */
+
+function checkFlexGap() {
+  var flex = document.createElement("div");
+  flex.style.display = "flex";
+  flex.style.flexDirection = "column";
+  flex.style.rowGap = "1px";
+
+  flex.appendChild(document.createElement("div"));
+  flex.appendChild(document.createElement("div"));
+
+  document.body.appendChild(flex);
+  var isSupported = flex.scrollHeight === 1;
+  flex.parentNode.removeChild(flex);
+  console.log(isSupported);
+
+  if (!isSupported) document.body.classList.add("no-flexbox-gap");
+}
+
+checkFlexGap();
