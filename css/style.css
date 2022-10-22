@@ -237,6 +237,9 @@
   width: 35%;
 }
 
+.step-img-box picture {
+  text-align: center;
+}
 /* ************************* */
 /*SECTION MEALS*/
 /* ************************* */
